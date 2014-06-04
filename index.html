@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css" />
+
+	<!--<script src="js/less.js" type="text/javascript"></script> -->
+	<style>
+		.logo {
+			background: transparent url("images/logo_Business.png") left center no-repeat;
+			width: 150px;
+			height: 50px;
+			margin-top: 10px;
+		}
+		.button {
+			background-color: #f7532f;
+			color: #ffffff;
+			width: 182px;
+			height: 40px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-top: -10px;
+			border: 1px solid #e4371d;
+			border-radius: 3px;
+			box-shadow: 0 0 0 4px #f2f2f2, inset 0 1px 2px #f4b0a6;
+		}
+		.smallicon {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background: url("images/sprites_beena.png");
+		}
+		.phone {
+			background-position: 0px 0px;
+			margin: 0 10px;
+		}
+		.email {
+			background-position: -64px 0px;
+			margin: 0px 10px;
+		}
+		.rightarrow {
+			background-position: -128px 0px;
+			margin: -5px 3px;
+		}
+		.listtop {
+			list-style: none;
+			float: right;
+			margin-top: 1.5em;
+		}
+		.listtop li {
+			float: left;
+			border-right: 1px dotted #6c6c6c;
+			margin-right: 1.5em;
+			padding-right: 1.5em;
+		}
+		.listtop li:last-child {
+			border-right: none;
+		}
+		.header {
+			height: 100px;
+		}
+		.banner {
+			background: transparent url("images/blue-background.jpg");
+			text-align: center;
+			border-bottom: 10px, #143044;
+		}
+		.banner h1 {
+			color: #ffffff;
+			font: 42px"Cabin", Helvetica, Arial, sans-serif;
+			padding-top: 80px;
+		}
+		.banner h2 {
+			color: #3694b7;
+			font: 22px"Cabin", Helvetica, Arial, sans-serif;
+			text-shadow: 1px, 1px rgba(0, 0, 0, 0.2);
+			padding: 30px 0px;
+		}
+		.banner h4 {
+			color: #3694b7;
+			font: italic 17px/1.5em"Gentium Basic", Georgia, serif;
+			text-shadow: 1px, 1px rgba(0, 0, 0, 0.5);
+			padding-top: 30px;
+			padding-bottom: 20px;
+		}
+		.banner h4::before {
+			position: absolute;
+			content: url("images/logo_BluetopQuote.png");
+			left: 390px;
+			top: 424px;
+		}
+		.banner h4::after {
+			position: absolute;
+			content: url("images/logo_BluebottomQuote.png");
+			right: 400px;
+			top: 480px;
+		}
+		.banner p {
+			font: italic 12px/1.5em"Gentium Basic", Georgia, serif;
+			color: #ffffff;
+		}
+		.bannerButton {
+			background-color: #f7532f;
+			color: #ffffff;
+			width: 182px;
+			height: 35px;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-top: -10px;
+			border: 1px solid #e4371d;
+			border-radius: 3px;
+			box-shadow: 0 0 0 4px #f2f2f2, inset 0 1px 2px #f4b0a6;
+			position: absolute;
+			right: 497px;
+			top: 359px;
+		}
+		.features {
+			padding-top: 60px;
+			text-align: center;
+			background: transparent url("images/light-background.jpg");
+		}
+		.features ul {
+			list-style: none;
+			margin-top: 40px;
+			float: left;
+			margin-bottom: 40px;
+		}
+		.largeicon {
+			display: inline-block;
+			width: 42px;
+			height: 42px;
+			background: url("images/sprites_beena.png");
+		}
+		.ecom {
+			background-position: 0px -64px;
+		}
+		.books {
+			background-position: -64px -64px;
+		}
+		.gear {
+			background-position: -128px -64px;
+		}
+		.features ul li {
+			padding-top: 25px;
+			padding-bottom: 80px;
+			background: #ffffff;
+			border: 1px solid #e0e0e0;
+			box-shadow: 0 0 5px 0 #f2f2f2;
+		}
+		.features h1 {
+			font: 35px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3b5568;
+		}
+		.features h2 {
+			font: 20px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6694b4;
+		}
+		.features h3 {
+			font: 18px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3b5568;
+		}
+		.link-top {
+			font: italic 12px/1.5em"Gentium Basic", Georgia, serif;
+			color: #ea492c;
+		}
+		.threeColumn {
+			background: transparent url("images/black-background.jpg");
+			text-align: center;
+		}
+		.threeColumn h2 {
+			padding-top: 20px;
+			font: 35px"Cabin", Helvetica, Arial, sans-serif;
+			color: #ffffff;
+		}
+		.threeColumn h3 {
+			font: 18px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3694b7;
+		}
+		.threeColumn p {
+			font: 12px"Cabin", Helvetica, Arial, sans-serif;
+			color: #ffffff;
+		}
+		.testimonial {
+			text-align: center;
+		}
+		.testimonial h2 {
+			font: 35px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3b5568;
+			padding: 60px 8px 0px;
+		}
+		.testimonial p {
+			font: 20px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6694b4;
+		}
+		.testimonial #quotetext {
+			font: italic 18px/1.5em"Gentium Basic", Georgia, serif;
+			color: #2894d8;
+		}
+		.testimonial #quoteid {
+			font: 12px"Cabin", Helvetica, Arial;
+			color: #6c6c6c;
+			padding-top: 25px;
+		}
+		.testimonial #quotetext::before {
+			position: absolute;
+			content: url("images/logo_WhitetopQuote.png");
+			left: 175px;
+			top: 1648px;
+		}
+		.testimonial #quotetext::after {
+			position: absolute;
+			content: url("images/logo_WhitebottomQuote.png");
+			left: 563px;
+			top: 1705px;
+		}
+		.testimonial ul {
+			list-style: none;
+		}
+		.testimonial li {
+			float: left;
+			padding-left: 0px;
+		}
+		.gallery {
+			background: transparent url("images/light-background.jpg");
+			text-align: center;
+		}
+		.gallery h2 {
+			padding-top: 60px;
+			font: 35px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3b5568;
+		}
+		.gallery h3 {
+			padding-top: 12px;
+			padding-bottom: 30px;
+			font: 20px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6694b4;
+		}
+		.gallery .prev {
+			position: absolute;
+			top: 50%;
+			left: -6em;
+			margin-top: -21px;
+			background: url("images/sprites_beena.png");
+			background-position: 0 -128px;
+		}
+		.gallery .photogal .next {
+			position: absolute;
+			background: url("images/sprites_beena.png");
+			background-position: -64px -128px;
+		}
+		.gallery .photogal {
+			text-align: center;
+			height: 400px;
+		}
+		.gallery p {
+			font: italic 12px/1.5em"Gentium Basic", Georgia, serif;
+		}
+		.footer {
+			text-align: center;
+		}
+		.footer h2 {
+			padding-top: 55px;
+			font: 35px"Cabin", Helvetica, Arial, sans-serif;
+			color: #3b5568;
+		}
+		.footer h3 {
+			padding-top: 20px;
+			font: 20px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6694b4;
+			padding-bottom: 50px;
+		}
+		.footer ul {
+			list-style: none;
+		}
+		.footer p {
+			font: 12px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6c6c6c;
+		}
+		.footer li a {
+			float: left;
+			font: 12px"Cabin", Helvetica, Arial, sans-serif;
+			color: #ed6046;
+		}
+		.footer .span4 {
+			text-align: left;
+		}
+		.footer .span4 ul {
+			margin-left: 0px;
+		}
+		.footer .span3 {
+			text-align: left;
+			margin-left: 20px;
+		}
+		.footer .span3 ul {
+			margin-left: 0px;
+			font: 12px"Cabin", Helvetica, Arial, sans-serif;
+			color: #6c6c6c;
+		}
+		.footer .span3 a {
+			position: relative;
+			top: -18px;
+			left: 55px;
+			font: 12px"Cabin", Helvetica, Arial, sans-serif;
+			color: #ed6046;
+		}
+		.footer .span5 {
+			float: left;
+		}
+		.footer .span5 li {
+			float: right;
+			margin-left: 10px;
+		}
+		.twitter {
+			background: url("images/twitter.png") no-repeat;
+			width: 37px;
+			height: 37px;
+		}
+		.facebook {
+			background: url("images/facebook.png") no-repeat;
+			width: 37px;
+			height: 37px;
+		}
+		.plus {
+			background: url("images/google-plus.png") no-repeat;
+			width: 37px;
+			height: 37px;
+		}
+		.linkedin {
+			background: url("images/linkedin.jpg") no-repeat;
+			width: 37px;
+			height: 37px;
+		}
+		hr {
+			padding-top: 20px;
+			padding-bottom: 10px;
+		}
+		.threeColumn ul {
+			margin-top: 15px;
+		}
+		.threeColumn ul li {
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="header">
+
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<h1 class="logo">
+						<a href=""></a>
+					</h1>
+				</div>
+
+				<div class="span9">
+					<ul class="listtop">
+						<li>
+							<span class="smallicon phone"></span>call us</li>
+						<li>
+							<span class="smallicon email"></span>
+							<a href="" class="link-email">office@mycompany.com</a>
+						</li>
+						<li>
+							<a href class="button">get started for free
+								<span class="smallicon rightarrow"></span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<div class="container">
+			<h1>A big, bold, beautiful headline</h1>
+			<h2>Followed by an equally beautiful but smaller sub-heading.</h2>
+			<input type="text" style="width:370px; height: 35px;" placeholder="enter email" />
+			<input type="button" class="bannerButton" value="Start now" />
+			<h4>This theme has really helped us increase our customer
+				<br/>count and conversion rate. And its really affordable as
+				<br/>well. Highly recommended.</h4>
+			<p>-John, Company Inc.</p>
+
+
+		</div>
+	</div>
+
+
+	<div class="features">
+		<div class="container">
+			<h1>How about some great features?</h1>
+			<h2>This is a list of features that has a large icon, title and some description.</h2>
+			<div class="row">
+				<ul class="row">
+					<li class="span4">
+						<span class="largeicon ecom"></span>
+						<h3>This is a nice little feature title</h3>
+						<p>And it's followed by some description text.</p>
+					</li>
+					<li class="span4">
+						<span class="largeicon books"></span>
+
+						<h3>This is a nice little feature title</h3>
+						<p>And it's followed by some description text.</p>
+					</li>
+					<li class="span4">
+						<span class="largeicon gear"></span>
+
+						<h3>This is a nice little feature title</h3>
+						<p>And it's followed by some description text.</p>
+					</li>
+				</ul>
+			</div>
+			<a href="#top" class="link-top">-Go Top-</a>
+		</div>
+	</div>
+
+	<div class="threeColumn">
+		<div class="container">
+			<h2>A section with a description and a three-column list</h2>
+			<h3>This is the description text and also a sub-heading.</h3>
+			<div class="row">
+				<ul>
+					<li class="span4" style="margin-left: 0">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+						</p>
+					</li>
+					<li class="span4" style="margin-left: 10px;">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+						</p>
+					</li>
+					<li class="span4" style="margin-left: 10px;">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+						</p>
+					</li>
+					<li class="span4" style="margin-left: 0">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+						</p>
+					</li>
+					<li class="span4" style="margin-left: 10px;">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+						</p>
+					</li>
+					<li class="span4" style="margin-left: 10px;">
+						<span class="largeicon ecom" style="float:left;"></span>
+						<h3>This is a nice little feature title</h3>
+						<p style="margin-left:57px; text-align:left;">And its followed by some description text. Youll want to keep this simple and to the point.
+							<br/>And heres an even longer feature text. This will span on two rows.</p>
+					</li>
+				</ul>
+			</div>
+
+			<a href="#top" class="link-top">-Go Top-</a>
+
+
+
+		</div>
+	</div>
+
+	<div class="testimonial">
+		<div class="container">
+
+			<div class="row">
+				<h2>This is a section with testimonials and customer list</h2>
+				<p>We have the client list on the right and some testimonials on the left</p>
+				<hr />
+				<div id="quote" class="span5">
+					<p id="quotetext">I bought this a while ago and wow... its
+						<br/>just awesome. Well built, beautiful to
+						<br/>look at, a really premium landing page.</p>
+					<p id="quoteid">- Biased Author, ThemeForest</p>
+				</div>
+
+				<div class="span7">
+					<ul class="list_customers">
+						<li>
+							<img src="images/clients/logo_client1.png">
+						</li>
+						<li style="float: left">
+							<img src="images/clients/logo_client2.png">
+						</li>
+						<li style="float: left">
+							<img src="images/clients/logo_client3.png">
+						</li>
+						<li style="float: left">
+							<img src="images/clients/logo_client4.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client5.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client6.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client7.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client8.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client9.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client10.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client11.png">
+						</li>
+						<li>
+							<img src="images/clients/logo_client12.png">
+						</li>
+
+
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<a href="#top" class="link-top">-Go Top-</a>
+		</div>
+	</div>
+
+	<div class="gallery">
+		<div class="container">
+			<h2>This is an image gallery</h2>
+			<h3>Use the controls on the sides to navigate.</h3>
+			<div class="photogal">
+				<span class="prev"></span>Gallery here
+				<span class="next"></span>
+			</div>
+			<p>-This is the image caption-</p>
+			<a href="#top" class="link-top">-Go Top-</a>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<div class="container">
+
+			<h2>Free trial. Get started in under a minute.</h2>
+			<h3>No credit card required</h3>
+			<a href class="button">get started for free
+				<span class="smallicon rightarrow"></span>
+			</a>
+			<hr/>
+			<div class="row">
+				<div class="span4">
+					<p>Copyright @ 2012 Company Inc.. All rights reserved.</p>
+					<ul>
+						<li>
+							<a href "">Terms of Service</a>
+						</li>
+						<li>
+							<a href "">Privacy Policy</a>
+						</li>
+						<li>
+							<a href "">Sitemap</a>
+						</li>
+					</ul>
+				</div>
+				<div class="span3">
+					<ul>
+						<li>Call us: (800)-BUS-INES</li>
+						<li>Email us:
+						</li>
+						<a href "">office@mycompany.com</a>
+					</ul>
+					<p>My Company Inc.
+						<br />112 Avenue #2321
+						<br />Los Angeles, CA, 91789, USA</p>
+				</div>
+				<div class="span5">
+					<ul>
+						<li class="twitter">
+
+						</li>
+						<li class="facebook">
+
+						</li>
+						<li class="linkedin">
+
+						</li>
+						<li class="plus">
+
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+
+
+</html>
